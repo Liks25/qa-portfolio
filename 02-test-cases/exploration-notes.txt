@@ -88,3 +88,33 @@ SUMMARY OF POSSIBLE DEFECTS (to confirm and log as bugs)
   4. No "no results" message for a search with no matches.
   5. Cart quantity cannot be changed.
   6. Empty search behaviour (verify first).
+
+
+===============================================================
+ADDENDUM: CONTACT US, NAVIGATION, CHECKOUT
+===============================================================
+
+6. CONTACT US
+[ISSUE] The form can be submitted without a Subject and/or without a Message.
+[VERIFY]After a successful submission the only option is to go to the Home
+        page; there is no direct way back to the Contact Us form.
+        (Usability observation, probably not a defect.)
+[OBSERVATION] Attachment upload exists, but it is unclear how the site makes
+        sure a complaint has its supporting documents. Check what file types
+        and sizes are accepted. (Improvement suggestion, not a defect.)
+
+7. NAVIGATION
+[OK]    All hyperlinks opened and worked.
+
+8. CART, CHECKOUT, ORDER, INVOICE
+[OK]    Payment, order and invoice functions work, apart from the cart
+        quantity issue already noted in section 4.
+
+UPDATED LIST OF POSSIBLE DEFECTS (to confirm and log as bugs)
+  1. No password length/strength validation on registration.
+  2. Zip code accepts non-numeric input.
+  3. Mobile number accepts non-numeric input.
+  4. No "no results" message for a search with no matches.
+  5. Cart quantity cannot be changed.
+  6. Empty search behaviour (verify first).
+  7. Contact Us form submits without Subject and/or Message.
