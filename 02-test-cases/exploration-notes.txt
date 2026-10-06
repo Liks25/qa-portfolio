@@ -1,0 +1,90 @@
+EXPLORATORY TESTING NOTES
+=========================
+Application : Automation Exercise (https://automationexercise.com)
+Tester      : Likhona
+Browser     : Firefox (version: ____ )
+OS          : Windows 11
+Date        : ____-__-__
+
+Purpose: Manual exploration before writing test cases. These notes feed
+directly into the test cases (02-test-cases/test-cases.csv) and bug reports.
+
+Legend:
+  [OK]    = behaved as expected
+  [ISSUE] = possible defect (confirm, screenshot, then log as a bug)
+  [VERIFY]= unclear, re-check and capture exact behaviour
+
+
+---------------------------------------------------------------
+1. SIGN UP / REGISTRATION
+---------------------------------------------------------------
+[OK]    Empty required fields: a popup stops the form from being submitted.
+[OK]    Invalid email format: a popup shows that the email address is not valid.
+[OK]    Existing email: the site detects an email that is already registered.
+
+[ISSUE] Password: no validation on password strength or length
+        (no minimum length, no character rules).
+[ISSUE] Zip code: accepts non-numeric input (no format check).
+[ISSUE] Mobile number: accepts non-numeric input (no format check).
+
+To capture next time:
+  - Exact wording of each popup / error message (screenshot each one).
+  - What the shortest accepted password was (e.g. 1 character?).
+  - Example of non-numeric data accepted in zip code and mobile number
+    (e.g. "abc").
+
+
+---------------------------------------------------------------
+2. LOGIN
+---------------------------------------------------------------
+[OK]    Email not in the system: the site shows that the login is incorrect.
+[OK]    Empty field: the site flags the empty field.
+[OK]    Deleted account: cannot log back in with its credentials.
+
+To capture next time:
+  - Exact error message for wrong email vs wrong password (are they the same?).
+  - Whether the password field is masked.
+
+
+---------------------------------------------------------------
+3. SEARCH
+---------------------------------------------------------------
+[VERIFY] Empty search: the search does not pick up an empty field.
+         Confirm exactly what happens (nothing, error, or all products?).
+[ISSUE]  Gibberish search (e.g. "asdfgh"): no helpful message is shown when
+         no products match.
+
+To capture next time:
+  - What the page shows for a valid keyword vs gibberish (screenshot both).
+  - Behaviour with special characters (e.g. %%%) and a very long string.
+
+
+---------------------------------------------------------------
+4. CART
+---------------------------------------------------------------
+[ISSUE] Quantity cannot be changed in the cart. To add more of the same item,
+        you have to add it again manually.
+
+To capture next time:
+  - Does the cart total update correctly after re-adding the same item?
+  - Can an item be removed from the cart?
+
+
+---------------------------------------------------------------
+5. STILL TO EXPLORE
+---------------------------------------------------------------
+  - Contact Us form (required fields, email format, file upload types/sizes)
+  - Navigation (menu links, footer links, logo, browser back button)
+  - Product listing and product detail pages
+  - Logout behaviour
+
+
+---------------------------------------------------------------
+SUMMARY OF POSSIBLE DEFECTS (to confirm and log as bugs)
+---------------------------------------------------------------
+  1. No password length/strength validation on registration.
+  2. Zip code accepts non-numeric input.
+  3. Mobile number accepts non-numeric input.
+  4. No "no results" message for a search with no matches.
+  5. Cart quantity cannot be changed.
+  6. Empty search behaviour (verify first).
